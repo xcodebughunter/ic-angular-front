@@ -1,0 +1,31 @@
+<div class="login-general">
+    <div class="login-body">
+
+        <mat-spinner *ngIf="authLoading" diameter="75" style="margin: 0 auto;"></mat-spinner>
+        
+        <form *ngIf="!authLoading" [formGroup]="form" (ngSubmit)="ingresar()">
+            <h1>Nombre de la empresa</h1>
+            <img src="../../../assets/login/worker.png" alt="Login image" width="60%">
+
+            <mat-form-field class="login-element-size" appearance="fill" style="margin-top: 1em;">
+                <mat-label>Usuario</mat-label>
+                <input matInput formControlName="usuario" autocomplete="off">
+            </mat-form-field>
+        
+            <mat-form-field class="login-element-size" appearance="fill" style="margin-top: 1em;">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput formControlName="contra" autocomplete="off" >
+            </mat-form-field>
+            <br>
+            <button [disabled]="form.invalid" mat-raised-button type="submit" color="primary" class="login-element-size login-boton">Ingresar</button>      
+               
+            <br>
+            <br>
+            <span><a href="#">Olvide la contrasena</a> &nbsp;|&nbsp;&nbsp;<a href="#">Ayuda</a></span>
+
+        </form>
+
+        
+    </div>
+    
+</div>
