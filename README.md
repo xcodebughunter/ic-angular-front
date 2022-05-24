@@ -1,5 +1,14 @@
 # Grupo dos Integracion Continua
 
+## Integrantes
+
+- NESTOR ANDRES MARTINEZ
+- CRISTIAN CAMILO RODRIGUEZ
+- Mateo Alvarez
+- Jose Luis Duarte Mesa
+- Alexander Fierro Angel
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
 ## Development server
