@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ingresar(){
     console.log(this.form.value);
 
-    if(this.form.value.usuario == 'gatico' && this.form.value.contra == 'cafe'){
+    if(this.form.value.usuario == 'test' && this.form.value.contra == 'test'){
 
       this.authLoading = true;
       setTimeout(() => {
