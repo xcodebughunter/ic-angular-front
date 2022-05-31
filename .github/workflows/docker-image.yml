@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag grupodos-angular-frontend:latest
+      
+    - name: Push To Registry
+      uses: redhat-actions/push-to-registry@v2.5.1
+      with:
+        # Name of the image/manifest to push (e.g. username/imagename or imagename)
+        image: grupodos-angular-frontend
+        # Hostname and optional namespace to push the image to (eg. quay.io/username or quay.io)
+        registry: grupodosregistry.azurecr.io
+        # Username to use as credential to authenticate to the registry
+        username: grupodosregistry
+        # Password to use as credential to authenticate to the registry
+        password: QLHDH9On1KAe97Bt=ZesQRQ2aLC97oKD
+        # Verify TLS certificates when contacting the registry
+        tls-verify: true
